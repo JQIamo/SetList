@@ -1,0 +1,6 @@
+Structure of column classes
+
+When would I need to add a column class?
+
+Which methods do I need to write if I add a column class?
+

@@ -1,0 +1,7 @@
+How device classes are organized
+
+Methods you MUST write
+
+Methods you'll probably need to write
+
+Right now, need to add object constant to case structure so that the correct object is selected when "add" is pressed. 

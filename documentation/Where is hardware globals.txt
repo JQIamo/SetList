@@ -1,0 +1,36 @@
+Where did HardwareGlobals.vi go?
+================================
+
+The information needed to program each device now lives with a device Object. The easiest way to get up and running is to load an old set of HW globals. Otherwise, you'll need to configure each device when you add it to set list (Add Device dropdown).
+
+Below, the configuration for each of the devices is described, from a typical user's point of view. When you add/edit a device, you'll get a configuration window. Here you set up what should appear in the SetList table and how it will look (column labels, widths when displayed, colors). You also HAVE to give device a name, and can OPT to give device description.
+
+
+Master: (PulseBlaster for now)
+------------------------------
+This object is automatically loaded and configured. However, you can edit it's appearance from Manage Devices, edit button on Master (top right).
+
+Novatechs
+---------
+It is assumed you have a 4 channel device, programmed over serial, with only channels 0 and 1 tableable. 
+Configuration: Master trigger line, COM port, SetList appearance.
+
+DDS
+---
+This DDS is the Olmschenk FPGA driven device, used heavily on Rb I. It can operate in sweeps or table mode. Toggling the mode will change the columns you see in the SetList table. 
+Configuration: Master trigger line, USB "Channel Name", Mode, SetList appearance.
+
+
+NI cards
+--------
+This includes PCI (AO only) and USB (AO + DO + AI) cards from National Instruments.
+
+When you add/edit a device, you'll get a configuration window. 
+
+- Select the Master trigger line AND the Trigger terminal (where on NI dev to expect the trigger). You can also select where to mirror the trigger line.
+*NOTE*: You must select resources from the same physical device! There are no safeguards to keep you from being dumb.
+- Select DO channel resource and input number of channels. If N={8,16,32}, exactly this many outputs are programmed, starting from DO-0 (zero). If N not {8,16,32} and less than 32, you will get output on all 32 channels with your N starting from 0; upper 32-N channels will all output 0 V!.
+- Select the AO channel resources (all from same device! but they need not be consecutive or all of the available AOs from a given device).
+- Select AI channels, if you'd like to use the "AI scope" functionality (separate VI).
+
+*NOTE*: The number of columns you get is defined by each array size (not the validity of what you enter)! If you want to DECREASE the number of channels, you must remove elements from the array (right-click, Data Operations >> Delete Element). Scroll down and make sure elements are greyed-out if you do not intend to program them!
