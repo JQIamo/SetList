@@ -4,6 +4,6 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
-	<Item Name="Network_AI_Shared_Variables_v4.vi" Type="VI" URL="../Network_AI_Shared_Variables_v4.vi"/>
-	<Item Name="Network_Cycle_Shared_Variables_v4.vi" Type="VI" URL="../Network_Cycle_Shared_Variables_v4.vi"/>
+	<Item Name="Network_AI_Shared_Variables_v4.vi" Type="VI" URL="../Utils_devs/Network_AI_Shared_Variables_v4.vi"/>
+	<Item Name="Network_Cycle_Shared_Variables_v4.vi" Type="VI" URL="../Utils_devs/Network_Cycle_Shared_Variables_v4.vi"/>
 </Library>
