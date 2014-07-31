@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="13008000">
-	<Property Name="varPersistentID:{9652572C-CF8D-44EE-93F1-563B24FE14DA}" Type="Ref">/My Computer/codes/VariableLibrary.lvlib/FileNum</Property>
-	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/VariableLibrary.lvlib/Instruction String</Property>
+	<Property Name="varPersistentID:{9652572C-CF8D-44EE-93F1-563B24FE14DA}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/FileNum</Property>
+	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/Instruction String</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
@@ -24,7 +24,6 @@
 		<Item Name="codes" Type="Folder" URL="../codes">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="UserProcedures.vi" Type="VI" URL="../codes/UserProcedures.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
