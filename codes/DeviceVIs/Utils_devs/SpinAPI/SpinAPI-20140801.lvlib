@@ -18,6 +18,7 @@
 	<Item Name="pb_init.vi" Type="VI" URL="../pb_init.vi"/>
 	<Item Name="pb_inst_direct.vi" Type="VI" URL="../pb_inst_direct.vi"/>
 	<Item Name="pb_inst_pbonly.vi" Type="VI" URL="../pb_inst_pbonly.vi"/>
+	<Item Name="pb_reset.vi" Type="VI" URL="../pb_reset.vi"/>
 	<Item Name="pb_select_board.vi" Type="VI" URL="../pb_select_board.vi"/>
 	<Item Name="pb_start.vi" Type="VI" URL="../pb_start.vi"/>
 	<Item Name="pb_start_programming.vi" Type="VI" URL="../pb_start_programming.vi"/>
