@@ -16,10 +16,12 @@
 	<Item Name="pb_core_clock.vi" Type="VI" URL="../pb_core_clock.vi"/>
 	<Item Name="pb_error_handler.vi" Type="VI" URL="../pb_error_handler.vi"/>
 	<Item Name="pb_init.vi" Type="VI" URL="../pb_init.vi"/>
+	<Item Name="pb_inst_direct.vi" Type="VI" URL="../pb_inst_direct.vi"/>
 	<Item Name="pb_inst_pbonly.vi" Type="VI" URL="../pb_inst_pbonly.vi"/>
 	<Item Name="pb_select_board.vi" Type="VI" URL="../pb_select_board.vi"/>
 	<Item Name="pb_start.vi" Type="VI" URL="../pb_start.vi"/>
 	<Item Name="pb_start_programming.vi" Type="VI" URL="../pb_start_programming.vi"/>
 	<Item Name="pb_stop.vi" Type="VI" URL="../pb_stop.vi"/>
 	<Item Name="pb_stop_programming.vi" Type="VI" URL="../pb_stop_programming.vi"/>
+	<Item Name="Program_VLIW_array.vi" Type="VI" URL="../Program_VLIW_array.vi"/>
 </Library>
