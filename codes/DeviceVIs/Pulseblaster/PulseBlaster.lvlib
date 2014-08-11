@@ -8,14 +8,5 @@
 	<Item Name="ConvertPB_LongDelay.vi" Type="VI" URL="../ConvertPB_LongDelay.vi"/>
 	<Item Name="ConvertPB_Triggers.vi" Type="VI" URL="../ConvertPB_Triggers.vi"/>
 	<Item Name="PB_add_VLIW.vi" Type="VI" URL="../PB_add_VLIW.vi"/>
-	<Item Name="pb_close.vi" Type="VI" URL="../pb_close.vi"/>
 	<Item Name="PB_defines.vi" Type="VI" URL="../PB_defines.vi"/>
-	<Item Name="pb_init.vi" Type="VI" URL="../pb_init.vi"/>
-	<Item Name="pb_outp.vi" Type="VI" URL="../pb_outp.vi"/>
-	<Item Name="pb_select_board.vi" Type="VI" URL="../pb_select_board.vi"/>
-	<Item Name="pb_write_three.vi" Type="VI" URL="../pb_write_three.vi"/>
-	<Item Name="PBcard_both_close.vi" Type="VI" URL="../PBcard_both_close.vi"/>
-	<Item Name="PBcard_init.vi" Type="VI" URL="../PBcard_init.vi"/>
-	<Item Name="PBcard_start.vi" Type="VI" URL="../PBcard_start.vi"/>
-	<Item Name="PBcard_load.vi" Type="VI" URL="../PBcard_load.vi"/>
 </Library>
