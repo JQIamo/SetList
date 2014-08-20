@@ -9,4 +9,5 @@
 	<Item Name="ConvertPB_Triggers.vi" Type="VI" URL="../ConvertPB_Triggers.vi"/>
 	<Item Name="PB_add_VLIW.vi" Type="VI" URL="../PB_add_VLIW.vi"/>
 	<Item Name="PB_defines.vi" Type="VI" URL="../PB_defines.vi"/>
+	<Item Name="PB_Nest_Loops.vi" Type="VI" URL="../PB_Nest_Loops.vi"/>
 </Library>
