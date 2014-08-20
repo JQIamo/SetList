@@ -5,7 +5,7 @@
 	<Property Name="NI.Lib.LocalName" Type="Str">VariableManagerAPI</Property>
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
-	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="Advanced" Type="Folder">
 		<Item Name="VMSemaphoreAcquire.vi" Type="VI" URL="../VMSemaphoreAcquire.vi"/>
 		<Item Name="VMSemaphoreRelease.vi" Type="VI" URL="../VMSemaphoreRelease.vi"/>
