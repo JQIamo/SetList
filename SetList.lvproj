@@ -1,5 +1,8 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="13008000">
+	<Property Name="CCSymbols" Type="Str"></Property>
+	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Property Name="varPersistentID:{9652572C-CF8D-44EE-93F1-563B24FE14DA}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/FileNum</Property>
 	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/Instruction String</Property>
 	<Item Name="My Computer" Type="My Computer">
