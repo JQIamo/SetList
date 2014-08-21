@@ -5,6 +5,7 @@
 	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Property Name="varPersistentID:{9652572C-CF8D-44EE-93F1-563B24FE14DA}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/FileNum</Property>
 	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/Instruction String</Property>
+	<Property Name="varPersistentID:{B8C981FA-5ACB-4E8A-9465-635F74BC3A7D}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/CycleDone</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
