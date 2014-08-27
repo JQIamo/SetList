@@ -153,4 +153,13 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 	</Item>
+	<Item Name="Error Check Columns.vi" Type="VI" URL="../Error Check Columns.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'*!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!""!)1J$&lt;WRV&lt;7ZT)%^,!!!_1(!!(A!!("J4&lt;'&amp;W:6^1&gt;7RT:7*M98.U:8)O&lt;(:D&lt;'&amp;T=Q!!&amp;F.M98:F8V"V&lt;(.F9GRB=X2F=C"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!+E"Q!"Y!!"!/1W^M&gt;7VO,GRW9WRB=X-!!!Z$&lt;WRV&lt;7YO&lt;(:D&lt;'&amp;T=Q!!'%"!!!(`````!!A+1W^M&gt;7VO=S"J&lt;A!!0%"Q!"Y!!"Q;5WRB&gt;G6@5(6M=W6C&lt;'&amp;T&gt;'6S,GRW9WRB=X-!!"64&lt;'&amp;W:6^1&gt;7RT:7*M98.U:8)A;7Y!6!$Q!!Q!!Q!%!!5!"A!%!!1!"!!%!!=!"!!*!!I#!!"Y!!!.#!!!!!!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!##!!!!*!!!!!!!1!,!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1082130944</Property>
+	</Item>
 </LVClass>
