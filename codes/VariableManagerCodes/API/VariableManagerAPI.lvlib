@@ -58,5 +58,6 @@
 	<Item Name="VMExport.vi" Type="VI" URL="../VMExport.vi"/>
 	<Item Name="VMImport.vi" Type="VI" URL="../VMImport.vi"/>
 	<Item Name="VMUIStart.vi" Type="VI" URL="../VMUIStart.vi"/>
+	<Item Name="VMUIStart_Viewer.vi" Type="VI" URL="../VMUIStart_Viewer.vi"/>
 	<Item Name="VMUIStop.vi" Type="VI" URL="../VMUIStop.vi"/>
 </Library>
