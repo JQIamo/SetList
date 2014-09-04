@@ -222,4 +222,13 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 	</Item>
+	<Item Name="Get Line Timing.vi" Type="VI" URL="../Get Line Timing.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;^!!!!$Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!$U!+!!BQ98*T:71A&gt;!!!$5!$!!&gt;O)(.U:8"T!$*!=!!?!!!7&amp;&amp;"V&lt;(.F9GRB=X2F=CZM&gt;G.M98.T!!!15(6M=W6C&lt;'&amp;T&gt;'6S)'^V&gt;!!!$E!Q`````Q2.&lt;W2F!!!01!I!#8"B=H.F:#"E&gt;!!%!!!!&amp;%!B$E&gt;S&lt;X6Q)'6O97*M:71`!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!"&amp;!!Q!+4'FO:3"J&lt;G2F?!!!-%"Q!"Y!!"955(6M=W6C&lt;'&amp;T&gt;'6S,GRW9WRB=X-!!!^1&gt;7RT:7*M98.U:8)A;7Y!6!$Q!!Q!!Q!%!!5!"A!(!!A!#1!+!!M!#1!-!!U$!!"Y!!!.#!!!#1!!!!E!!!#.#Q!!#1!!!!E!!!!!!!!!#1!!!!I!!!!!!!!!#!!!!*!!!!!!!1!/!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1082401296</Property>
+	</Item>
 </LVClass>
