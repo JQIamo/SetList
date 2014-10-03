@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema
+targetNamespace="https://jqi-wiki.physics.umd.edu/d/documentation/software/computercontrol/setlist/home"
+elementFormDefault="qualified"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:jqisetlist="https://jqi-wiki.physics.umd.edu/d/documentation/software/computercontrol/setlist/home"
+xmlns:lv="http://www.ni.com/labview"
+xmlns="https://jqi-wiki.physics.umd.edu/d/documentation/software/computercontrol/setlist/home">
+
+<xsd:element name="SetListPrefs">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="DocLoc" type="jqisetlist:DocLocType"/>
+			<xsd:element name="ActivePrefSet" type="xsd:token"/>
+			<xsd:element name="PrefSet" type="jqisetlist:PrefSetType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="DocLocType">
+		<xsd:sequence>
+			<xsd:element name="WikiURL" type="xsd:token"/>
+			<xsd:element name="LocalCopy" type="xsd:token"/>
+		</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="PrefSetType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:token"/>
+			<xsd:element name="PrefItem" type="jqisetlist:PrefItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="PrefItemType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:token"/>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="ModTimestamp" type="xsd:dateTime"/>
+			<xsd:element name="PrefKnown">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:token">
+						<xsd:enumeration value="Current"/>
+						<xsd:enumeration value="Old"/>
+						<xsd:enumeration value="Unknown"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>		
+			<xsd:element name="LVData" type="xsd:anyType"/>
+		</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
