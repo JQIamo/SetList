@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lv="http://www.ni.com/labview" elementFormDefault="qualified" targetNamespace="http://www.ni.com/labview" xmlns="http://www.ni.com/labview">
+
+<!--Root element that contains all other data-->
+<!--will NOT be produced by primitive-->
+<xsd:element name="LVData" type="lv:LVDataRootType"/>
+<xsd:complexType name="LVDataRootType">
+	<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Version" type="xsd:string"/>
+			<xsd:element name="I8" type="lv:I8Type"/>
+			<xsd:element name="I16" type="lv:I16Type"/>
+			<xsd:element name="I32" type="lv:I32Type"/>
+			<xsd:element name="I64" type="lv:I64Type"/>
+			<xsd:element name="U8" type="lv:U8Type"/>
+			<xsd:element name="U16" type="lv:U16Type"/>
+			<xsd:element name="U32" type="lv:U32Type"/>
+			<xsd:element name="U64" type="lv:U64Type"/>
+			<xsd:element name="EB" type="lv:EBType"/>
+			<xsd:element name="EW" type="lv:EWType"/>
+			<xsd:element name="EL" type="lv:ELType"/>
+			<xsd:element name="SGL" type="lv:SGLType"/>
+			<xsd:element name="DBL" type="lv:DBLType"/>
+			<xsd:element name="EXT" type="lv:EXTType"/>
+			<xsd:element name="CSG" type="lv:CSGType"/>
+			<xsd:element name="CDB" type="lv:CDBType"/>
+			<xsd:element name="CXT" type="lv:CXTType"/>
+			<xsd:element name="Boolean" type="lv:BooleanType"/>
+			<xsd:element name="Path" type="lv:PathType"/>
+			<xsd:element name="String" type="lv:StringType"/>
+			<xsd:element name="Refnum" type="lv:RefnumType"/>
+			<xsd:element name="Cluster" type="lv:ClusterType"/>
+			<xsd:element name="Array" type="lv:ArrayType"/>
+			<xsd:element name="DAQChannel" type="lv:DAQChannelType"/>
+			<xsd:element name="LvVariant" type="lv:LvVariantType"/>
+			<xsd:element name="WDT" type="lv:WDTType"/>
+			<xsd:element name="DynamicData" type="lv:DynamicDataType"/>
+			<xsd:element name="Timestamp" type="lv:TimestampType"/>
+			<xsd:element name="DigitalData" type="lv:DigitalDataType"/>
+			<xsd:element name="DigitalWaveform" type="lv:DigitalWaveformType"/>
+			<xsd:element name="DBLWaveform" type="lv:DBLWaveformType"/>
+			<xsd:element name="I16Waveform" type="lv:I16WaveformType"/>
+			<xsd:element name="SGLWaveform" type="lv:SGLWaveformType"/>
+			<xsd:element name="EXTWaveform" type="lv:EXTWaveformType"/>
+			<xsd:element name="I8Waveform" type="lv:I8WaveformType"/>
+			<xsd:element name="I32Waveform" type="lv:I32WaveformType"/>
+			<xsd:element name="I64Waveform" type="lv:I64WaveformType"/>
+			<xsd:element name="U8Waveform" type="lv:U8WaveformType"/>
+			<xsd:element name="U16Waveform" type="lv:U16WaveformType"/>
+			<xsd:element name="U32Waveform" type="lv:U32WaveformType"/>
+			<xsd:element name="U64Waveform" type="lv:U64WaveformType"/>
+			<xsd:element name="CSGWaveform" type="lv:CSGWaveformType"/>
+			<xsd:element name="CDBWaveform" type="lv:CDBWaveformType"/>
+			<xsd:element name="CXTWaveform" type="lv:CXTWaveformType"/>			
+	</xsd:choice>
+</xsd:complexType>
+
+<!--Basic elements-->
+<xsd:complexType name="I8Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="I16Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="I32Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="I64Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="U8Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="U16Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="U32Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="U64Type">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="EBType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+		<xsd:element name="Choice" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		<xsd:element name="Val" type="xsd:string" minOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="EWType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+		<xsd:element name="Choice" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		<xsd:element name="Val" type="xsd:string" minOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ELType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+		<xsd:element name="Choice" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		<xsd:element name="Val" type="xsd:string" minOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="SGLType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DBLType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="EXTType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="CSGType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="CDBType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="CXTType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="BooleanType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="PathType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="StringType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:group name="types">
+	<xsd:sequence>
+		<xsd:element name="RefType" type="xsd:string"/>
+	</xsd:sequence>
+</xsd:group>
+
+<xsd:group name="kinds">
+	<xsd:sequence>
+		<xsd:element name="RefKind" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:group ref="types" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:group>
+
+<xsd:complexType name="ActiveXType">
+	<xsd:sequence>
+		<xsd:element name="GUID" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="DotNetType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="RefnumType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Val" type="xsd:string"/>
+		<xsd:group ref="kinds" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="ActiveXType" type="ActiveXType" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="DotNetType" type="DotNetType" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="DAQChannelType">
+	<xsd:complexContent>
+		<xsd:extension base="lv:LVDataType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="LVDataType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+		<xsd:element name="Val" type="xsd:string" minOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+	
+<!--Array element-->
+<xsd:complexType name="ArrayType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:sequence>
+			<xsd:element name="Dimsize" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="I8" type="lv:I8Type"/>
+			<xsd:element name="I16" type="lv:I16Type"/>
+			<xsd:element name="I32" type="lv:I32Type"/>
+			<xsd:element name="I64" type="lv:I64Type"/>
+			<xsd:element name="U8" type="lv:U8Type"/>
+			<xsd:element name="U16" type="lv:U16Type"/>
+			<xsd:element name="U32" type="lv:U32Type"/>
+			<xsd:element name="U64" type="lv:U64Type"/>
+			<xsd:element name="EB" type="lv:EBType"/>
+			<xsd:element name="EW" type="lv:EWType"/>
+			<xsd:element name="EL" type="lv:ELType"/>
+			<xsd:element name="SGL" type="lv:SGLType"/>
+			<xsd:element name="DBL" type="lv:DBLType"/>
+			<xsd:element name="EXT" type="lv:EXTType"/>
+			<xsd:element name="CSG" type="lv:CSGType"/>
+			<xsd:element name="CDB" type="lv:CDBType"/>
+			<xsd:element name="CXT" type="lv:CXTType"/>
+			<xsd:element name="Boolean" type="lv:BooleanType"/>
+			<xsd:element name="Path" type="lv:PathType"/>
+			<xsd:element name="String" type="lv:StringType"/>
+			<xsd:element name="Refnum" type="lv:RefnumType"/>
+			<xsd:element name="Cluster" type="lv:ClusterType"/>
+			<xsd:element name="DAQChannel" type="lv:DAQChannelType"/>
+			<xsd:element name="LvVariant" type="lv:LvVariantType"/>
+			<xsd:element name="WDT" type="lv:WDTType"/>
+			<xsd:element name="DynamicData" type="lv:DynamicDataType"/>
+			<xsd:element name="Timestamp" type="lv:TimestampType"/>
+			<xsd:element name="DigitalData" type="lv:DigitalDataType"/>
+			<xsd:element name="DigitalWaveform" type="lv:DigitalWaveformType"/>
+			<xsd:element name="DBLWaveform" type="lv:DBLWaveformType"/>
+			<xsd:element name="I16Waveform" type="lv:I16WaveformType"/>
+			<xsd:element name="SGLWaveform" type="lv:SGLWaveformType"/>
+			<xsd:element name="EXTWaveform" type="lv:EXTWaveformType"/>
+			<xsd:element name="I8Waveform" type="lv:I8WaveformType"/>
+			<xsd:element name="I32Waveform" type="lv:I32WaveformType"/>
+			<xsd:element name="I64Waveform" type="lv:I64WaveformType"/>
+			<xsd:element name="U8Waveform" type="lv:U8WaveformType"/>
+			<xsd:element name="U16Waveform" type="lv:U16WaveformType"/>
+			<xsd:element name="U32Waveform" type="lv:U32WaveformType"/>
+			<xsd:element name="U64Waveform" type="lv:U64WaveformType"/>
+			<xsd:element name="CSGWaveform" type="lv:CSGWaveformType"/>
+			<xsd:element name="CDBWaveform" type="lv:CDBWaveformType"/>
+			<xsd:element name="CXTWaveform" type="lv:CXTWaveformType"/>	
+		</xsd:choice>
+	</xsd:sequence>
+</xsd:complexType>
+
+
+<!--Cluster element-->
+<xsd:complexType name="ClusterType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="NumElts" type="xsd:string"/>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="I8" type="lv:I8Type"/>
+			<xsd:element name="I16" type="lv:I16Type"/>
+			<xsd:element name="I32" type="lv:I32Type"/>
+			<xsd:element name="I64" type="lv:I64Type"/>
+			<xsd:element name="U8" type="lv:U8Type"/>
+			<xsd:element name="U16" type="lv:U16Type"/>
+			<xsd:element name="U32" type="lv:U32Type"/>
+			<xsd:element name="U64" type="lv:U64Type"/>
+			<xsd:element name="EB" type="lv:EBType"/>
+			<xsd:element name="EW" type="lv:EWType"/>
+			<xsd:element name="EL" type="lv:ELType"/>
+			<xsd:element name="SGL" type="lv:SGLType"/>
+			<xsd:element name="DBL" type="lv:DBLType"/>
+			<xsd:element name="EXT" type="lv:EXTType"/>
+			<xsd:element name="CSG" type="lv:CSGType"/>
+			<xsd:element name="CDB" type="lv:CDBType"/>
+			<xsd:element name="CXT" type="lv:CXTType"/>
+			<xsd:element name="Boolean" type="lv:BooleanType"/>
+			<xsd:element name="Path" type="lv:PathType"/>
+			<xsd:element name="String" type="lv:StringType"/>
+			<xsd:element name="Refnum" type="lv:RefnumType"/>
+			<xsd:element name="Cluster" type="lv:ClusterType"/>
+			<xsd:element name="Array" type="lv:ArrayType"/>
+			<xsd:element name="DAQChannel" type="lv:DAQChannelType"/>
+			<xsd:element name="LvVariant" type="lv:LvVariantType"/>
+			<xsd:element name="WDT" type="lv:WDTType"/>
+			<xsd:element name="DynamicData" type="lv:DynamicDataType"/>
+			<xsd:element name="Timestamp" type="lv:TimestampType"/>
+			<xsd:element name="DigitalData" type="lv:DigitalDataType"/>
+			<xsd:element name="DigitalWaveform" type="lv:DigitalWaveformType"/>
+			<xsd:element name="DBLWaveform" type="lv:DBLWaveformType"/>
+			<xsd:element name="I16Waveform" type="lv:I16WaveformType"/>
+			<xsd:element name="SGLWaveform" type="lv:SGLWaveformType"/>
+			<xsd:element name="EXTWaveform" type="lv:EXTWaveformType"/>
+			<xsd:element name="I8Waveform" type="lv:I8WaveformType"/>
+			<xsd:element name="I32Waveform" type="lv:I32WaveformType"/>
+			<xsd:element name="I64Waveform" type="lv:I64WaveformType"/>
+			<xsd:element name="U8Waveform" type="lv:U8WaveformType"/>
+			<xsd:element name="U16Waveform" type="lv:U16WaveformType"/>
+			<xsd:element name="U32Waveform" type="lv:U32WaveformType"/>
+			<xsd:element name="U64Waveform" type="lv:U64WaveformType"/>
+			<xsd:element name="CSGWaveform" type="lv:CSGWaveformType"/>
+			<xsd:element name="CDBWaveform" type="lv:CDBWaveformType"/>
+			<xsd:element name="CXTWaveform" type="lv:CXTWaveformType"/>	
+		</xsd:choice>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--LvVariant element-->
+<xsd:complexType name="LvVariantType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="I8" type="lv:I8Type"/>
+			<xsd:element name="I16" type="lv:I16Type"/>
+			<xsd:element name="I32" type="lv:I32Type"/>
+			<xsd:element name="I64" type="lv:I64Type"/>
+			<xsd:element name="U8" type="lv:U8Type"/>
+			<xsd:element name="U16" type="lv:U16Type"/>
+			<xsd:element name="U32" type="lv:U32Type"/>
+			<xsd:element name="U64" type="lv:U64Type"/>
+			<xsd:element name="EB" type="lv:EBType"/>
+			<xsd:element name="EW" type="lv:EWType"/>
+			<xsd:element name="EL" type="lv:ELType"/>
+			<xsd:element name="SGL" type="lv:SGLType"/>
+			<xsd:element name="DBL" type="lv:DBLType"/>
+			<xsd:element name="EXT" type="lv:EXTType"/>
+			<xsd:element name="CSG" type="lv:CSGType"/>
+			<xsd:element name="CDB" type="lv:CDBType"/>
+			<xsd:element name="CXT" type="lv:CXTType"/>
+			<xsd:element name="Boolean" type="lv:BooleanType"/>
+			<xsd:element name="Path" type="lv:PathType"/>
+			<xsd:element name="String" type="lv:StringType"/>
+			<xsd:element name="Refnum" type="lv:RefnumType"/>
+			<xsd:element name="Cluster" type="lv:ClusterType"/>
+			<xsd:element name="Array" type="lv:ArrayType"/>
+			<xsd:element name="DAQChannel" type="lv:DAQChannelType"/>
+			<xsd:element name="LvVariant" type="lv:LvVariantType"/>
+			<xsd:element name="WDT" type="lv:WDTType"/>
+			<xsd:element name="DynamicData" type="lv:DynamicDataType"/>
+			<xsd:element name="Timestamp" type="lv:TimestampType"/>
+			<xsd:element name="DigitalData" type="lv:DigitalDataType"/>
+			<xsd:element name="DigitalWaveform" type="lv:DigitalWaveformType"/>
+			<xsd:element name="DBLWaveform" type="lv:DBLWaveformType"/>
+			<xsd:element name="I16Waveform" type="lv:I16WaveformType"/>
+			<xsd:element name="SGLWaveform" type="lv:SGLWaveformType"/>
+			<xsd:element name="EXTWaveform" type="lv:EXTWaveformType"/>
+			<xsd:element name="I8Waveform" type="lv:I8WaveformType"/>
+			<xsd:element name="I32Waveform" type="lv:I32WaveformType"/>
+			<xsd:element name="I64Waveform" type="lv:I64WaveformType"/>
+			<xsd:element name="U8Waveform" type="lv:U8WaveformType"/>
+			<xsd:element name="U16Waveform" type="lv:U16WaveformType"/>
+			<xsd:element name="U32Waveform" type="lv:U32WaveformType"/>
+			<xsd:element name="U64Waveform" type="lv:U64WaveformType"/>
+			<xsd:element name="CSGWaveform" type="lv:CSGWaveformType"/>
+			<xsd:element name="CDBWaveform" type="lv:CDBWaveformType"/>
+			<xsd:element name="CXTWaveform" type="lv:CXTWaveformType"/>	
+		</xsd:choice>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--Waveform Datatype element-->
+<xsd:complexType name="WDTType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--DynamicDataType element-->
+<xsd:complexType name="DynamicDataType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--TimestampType element-->
+<xsd:complexType name="TimestampType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--DigitalDataType element-->
+<xsd:complexType name="DigitalDataType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--DigitalWaveformType element-->
+<xsd:complexType name="DigitalWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--DBLWaveformType element-->
+<xsd:complexType name="DBLWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--I16WaveformType element-->
+<xsd:complexType name="I16WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--SGLWaveformType element-->
+<xsd:complexType name="SGLWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--EXTWaveformType element-->
+<xsd:complexType name="EXTWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--I8WaveformType element-->
+<xsd:complexType name="I8WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--I32WaveformType element-->
+<xsd:complexType name="I32WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--I64WaveformType element-->
+<xsd:complexType name="I64WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--U8WaveformType element-->
+<xsd:complexType name="U8WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--U16WaveformTypee element-->
+<xsd:complexType name="U16WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--U32WaveformType element-->
+<xsd:complexType name="U32WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--U64WaveformType element-->
+<xsd:complexType name="U64WaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--CSGWaveformType element-->
+<xsd:complexType name="CSGWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--CDBWaveformType element-->
+<xsd:complexType name="CDBWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--CXTWaveformType element-->
+<xsd:complexType name="CXTWaveformType">
+	<xsd:sequence>
+		<xsd:element name="Name" type="xsd:string"/>
+		<xsd:element name="Cluster" type="lv:ClusterType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
