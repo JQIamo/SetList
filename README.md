@@ -3,8 +3,11 @@ SetList
 
 LabVIEW control for BEC experiments.
 
-This is a fresh repository forked from the SVNrepo revision 456.
-=======
+####The root of this repository was a fresh repository forked from the SVNrepo revision 456####
+The SVN repository is now obsolete and should no longer be used for version control.
+
+See https://jqi-wiki.physics.umd.edu/d/documentation/software/computercontrol/setlist/home for the most up-to-date documention
+
 ####You can now use Labview's built-in tools to compare/diff and merge from git:
 
 #####Setup
