@@ -3,16 +3,16 @@
 #pragma IgorVersion = 6.0 // Require Igor Version 6.0 at the oldest
 
 // Location of the SetListFB Data Folder
-StrConstant kSetListDFPath = root:SetListFB
+	StrConstant kSetListDFPath = root:SetListFB
 
-// Bit position of change flags
-Constant kFCsf	= 1
-Constant kFCdv	= 2
-Constant kFCs	= 4
-Constant kFCi	= 8
-Constant kFS	= 16
-Constant kFI		= 32
-Constant kFF	= 128
+	// Bit position of change flags
+	Constant kFCsf	= 1
+	Constant kFCdv	= 2
+	Constant kFCs	= 4
+	Constant kFCi	= 8
+	Constant kFS	= 16
+	Constant kFI		= 32
+	Constant kFF	= 128
 
 Function SetListCreateFeedback()
 	DFREF sdfref = GetDataFolderDFR()
@@ -257,6 +257,24 @@ FUNCTION SetListBuildForSeq([noSwap])
 	Redimension /N=(numpnts(wResp)+1) wResp
 	
 	wCmds[numpnts(wCmds)-1] = "ES"
+	
+	SetDataFolder sdfref
+END
+
+FUNCTION SetListSendMulligan(IP, PORT, Mulligan)
+	String	IP
+	Variable	PORT, Mulligan
+	String	data = SetListI32String(Mulligan)
+
+	Print "Sending Mulligan for", Mulligan, "via TCP"
+
+	DFREF	sdfref = GetDataFolderDFR()
+	SetDataFolder $kSetListDFPath	
+	Variable sockNum = 0
+	Make /T/O SLMbufferWave
+	SOCKITOpenConnection /Q/TIME=5 sockNum, IP, PORT, SLMbufferwave
+	SOCKITSendMSG /TIME=30 sockNum, data
+	SOCKITCloseConnection(sockNum)
 	
 	SetDataFolder sdfref
 END

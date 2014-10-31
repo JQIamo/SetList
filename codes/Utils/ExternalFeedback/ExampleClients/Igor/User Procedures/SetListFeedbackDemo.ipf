@@ -3,9 +3,11 @@
 #pragma IgorVersion = 6.0 // Require Igor Version 6.0 at the oldest
 
 // Change this to whichever computer you've got SetList on
-StrConstant	kSetListIP	= "127.0.0.1"
-// Default port in SetList is 55928
-Constant	kSetListPort	= 55928
+	StrConstant	kSetListIP	= "127.0.0.1"
+	// Default port in SetList is 55928
+	Constant	kSetListPort	= 55928
+	// Default Mulligan port in SetList is 
+	Constant	kSLMPort	= 50291
 
 MACRO	DemoSetListTCP()
 	SetListCreateFeedback()
@@ -19,4 +21,10 @@ MACRO	DemoSetListTCP()
 	
 	SetListBuildForNow()
 	SetListSendCmds(kSetListIP, kSetListPort)
+END
+
+MACRO	DemoSetListMulligan(filenumber)
+	Variable filenumber
+	
+	SetListSendMulligan(kSetListIP,kSLMPort, filenumber)
 END

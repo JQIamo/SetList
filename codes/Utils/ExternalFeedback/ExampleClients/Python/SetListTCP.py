@@ -2,6 +2,16 @@ import struct # Needed for pack
 import math   # Needed for .isnan()
 import socket # Needed for TCP comms
 
+def SetListMulligan(filenum):
+	"""Send a Mulligan over TCP"""
+	TCP_IP = '127.0.0.1'
+	TCP_PORT = 50291
+	
+	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	sock.connect((TCP_IP, TCP_PORT))
+	sock.send(struct.pack('>i', filenum))
+	sock.close()
+
 class SetListVar:
 	"""Individual variable for SetList"""
 	def __init__(self, name, defaultValue=float('NaN'), sequenceFunction = float('NaN'), informIgor = float('NaN'), sequence = float('NaN')):
@@ -119,7 +129,6 @@ class SetListVarSet:
 			elif code in ['TO', 'BC', 'NS']:
 				data = str(response[2:4])
 			else:
-				print response[2:6]
 				data = struct.unpack('>i', str(response[2:6]))
 			response = response[6:]
 			prettyform += code + ': ' + str(data) + '\n'
