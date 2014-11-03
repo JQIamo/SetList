@@ -1,3 +1,8 @@
 *.aliases
 *.lvlps
 SetListPrefs.xml
+## Python-related items
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+# Python cache directories
+*/__pycache__/
