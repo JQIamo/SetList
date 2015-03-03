@@ -4,7 +4,7 @@ LabVIEW control for BEC experiments.
 
 ## Getting started
 
-Read the [documentation](#Documentation), and clone the repository! If you encounter issues, please submit a ticket on the [issues page](https://github.com/JQIamo/SetList/issues) or email Zach (zsmith12 at umd).
+Read the [documentation](#documentation), and clone the repository! If you encounter issues, please submit a ticket on the [issues page](https://github.com/JQIamo/SetList/issues) or email Zach (zsmith12 at umd).
 
 You can now use Labview's built-in tools to compare/diff and merge from git:
 
