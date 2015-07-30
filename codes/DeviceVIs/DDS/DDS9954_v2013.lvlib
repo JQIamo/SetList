@@ -39,5 +39,4 @@
 	<Item Name="manualGainDivisor.vi" Type="VI" URL="../dds9954_interface_v2013/manualGainDivisor.vi"/>
 	<Item Name="manualPD.vi" Type="VI" URL="../dds9954_interface_v2013/manualPD.vi"/>
 	<Item Name="sendUpdatesDDS.vi" Type="VI" URL="../dds9954_interface_v2013/sendUpdatesDDS.vi"/>
-	<Item Name="update_dds_hardware_v6.vi" Type="VI" URL="../dds9954_interface_v2013/update_dds_hardware_v6.vi"/>
 </Library>
