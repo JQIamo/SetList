@@ -3,6 +3,7 @@
 	<Property Name="CCSymbols" Type="Str"></Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
+	<Property Name="SMProvider.SMVersion" Type="Int">201310</Property>
 	<Property Name="varPersistentID:{9652572C-CF8D-44EE-93F1-563B24FE14DA}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/FileNum</Property>
 	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/Instruction String</Property>
 	<Property Name="varPersistentID:{B8C981FA-5ACB-4E8A-9465-635F74BC3A7D}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/CycleDone</Property>
@@ -288,6 +289,7 @@
 				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
 				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
 				<Item Name="DAQmx Is Task Done.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Is Task Done.vi"/>
+				<Item Name="Get LV Class Default Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Default Value.vi"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
