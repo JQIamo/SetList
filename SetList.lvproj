@@ -8,6 +8,7 @@
 	<Property Name="varPersistentID:{A8C8A28A-A51C-4FC5-883E-78D641B38BE6}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/Instruction String</Property>
 	<Property Name="varPersistentID:{B8C981FA-5ACB-4E8A-9465-635F74BC3A7D}" Type="Ref">/My Computer/codes/Globals/VariableLibrary.lvlib/CycleDone</Property>
 	<Item Name="My Computer" Type="My Computer">
+		<Property Name="alias.value" Type="Str">192.168.137.181</Property>
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
 		<Property Name="IOScan.NetWatchdogEnabled" Type="Bool">false</Property>
@@ -25,7 +26,7 @@
 		<Property Name="server.tcp.serviceName.default" Type="Str">My Computer/VI Server</Property>
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
-		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Property Name="specify.custom.address" Type="Bool">true</Property>
 		<Item Name="codes" Type="Folder" URL="../codes">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
