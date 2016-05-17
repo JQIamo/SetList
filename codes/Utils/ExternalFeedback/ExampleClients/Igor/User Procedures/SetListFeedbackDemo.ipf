@@ -1,5 +1,5 @@
 #pragma rtGlobals = 3		// Use modern global access method and strict wave access.
-#pragma version = 1.0		// First try
+#pragma version = 2.0		// First try
 #pragma IgorVersion = 6.0 // Require Igor Version 6.0 at the oldest
 
 // Change this to whichever computer you've got SetList on

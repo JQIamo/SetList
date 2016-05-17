@@ -1,5 +1,5 @@
 #pragma rtGlobals = 3		// Use modern global access method and strict wave access.
-#pragma version = 1.0		// First try
+#pragma version = 2.0		// First try
 #pragma IgorVersion = 6.0 // Require Igor Version 6.0 at the oldest
 
 // Location of the SetListFB Data Folder
@@ -215,6 +215,12 @@ FUNCTION SetListSendCmds(IP, PORT)
 	SOCKITCloseConnection(sockNum)
 	
 	SetDataFolder sdfref
+END
+
+FUNCTION SetListGetPortCmds(IP)
+	String	IP
+	
+	return str2num(StringByKey("Port", FetchURL("http://"+IP+":3580/SetList/JSON"), "="))
 END
 
 FUNCTION SetListBuildForNow([noSwap])
