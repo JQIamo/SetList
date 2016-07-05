@@ -1,5 +1,5 @@
 #pragma rtGlobals = 3		// Use modern global access method and strict wave access.
-#pragma version = 1.0		// First try
+#pragma version = 2.0		// First try
 #pragma IgorVersion = 6.0 // Require Igor Version 6.0 at the oldest
 
 // Location of the SetListFB Data Folder
@@ -110,37 +110,52 @@ FUNCTION/S SetListVarCmds([noSwap])
 	
 	Variable numVars = numpnts(wFlags)
 	
-	cmdString = "SS" +  SetListI32String(numVars)
-	Make /O/T/N=(numVars+1) commands
-	Make /O/T=7/N=(numVars+1) responses
-	
-	commands[0] = cmdString
-	
-	// Break Double into bytes, temporarily
-	Redimension /U/B/E=1 /N=(8,numVars) wDefVal
+	Make /O/T/N=(numVars) commands
 	
 	Variable i
 	FOR (i=0; i<numVars; i=i+1)
-		cmdString = "DV" + num2char(wFlags[i]) + SetListPackString(wNames[i])
-		Variable j
-		IF (noSwap != 0)
-			FOR(j=0; j<8; j=j+1)
-				cmdString = cmdString + num2char(wDefVal[j][i])
-			ENDFOR
+		cmdString = "{\"name\":\"" + wNames[i] + "\""
+		
+		cmdString = cmdString + ",\"defaultValue\":"
+		IF ((wFlags[i] & kFCdv) != 0)
+			cmdString = cmdString + num2str(wDefVal[i])
 		ELSE
-			FOR(j=7; j>-1; j=j-1)
-				cmdString = cmdString + num2char(wDefVal[j][i])
-			ENDFOR
+			cmdString = cmdString + "null"
 		ENDIF
-		cmdString = cmdString + SetListPackString(wSeqFun[i])
-		commands[i+1] = cmdString
+
+		cmdString = cmdString + ",\"sequenceFunction\":"
+		IF ((wFlags[i] & kFCsf) != 0)
+			cmdString = cmdString +"\"" + wSeqFun[i] +"\""
+		ELSE
+			cmdString = cmdString + "null"
+		ENDIF
+
+		cmdString = cmdString + ",\"sequence\":"
+		IF ((wFlags[i] & kFCs) != 0)
+			IF ((wFlags[i] & kFS) != 0)
+				cmdString = cmdString + "true"
+			ELSE
+				cmdString = cmdString + "false"
+			ENDIF
+		ELSE
+			cmdString = cmdString + "null"
+		ENDIF
+
+		cmdString = cmdString + ",\"informIgor\":"
+		IF ((wFlags[i] & kFCi) != 0)
+			IF ((wFlags[i] & kFI) != 0)
+				cmdString = cmdString + "true"
+			ELSE
+				cmdString = cmdString + "false"
+			ENDIF
+		ELSE
+			cmdString = cmdString + "null"
+		ENDIF
+		cmdString = cmdString + "}"
+		commands[i] = cmdString
 	ENDFOR
-	
-	// Return Double to Double form
-	Redimension /D/E=1 /N=(numVars) wDefVal
-	
+
 	SetDataFolder sdfref
-	
 	Return cmdString
 END
 
@@ -185,96 +200,99 @@ FUNCTION/S SetListPrintStr(str)
 	RETURN noNulls
 END
 
-FUNCTION SetListSendCmds(IP, PORT)
-	String	IP
+FUNCTION SetListSendCmd(IP, COMMAND, [PORT])
+	String	IP, COMMAND
 	Variable	PORT
 	
 	DFREF	sdfref = GetDataFolderDFR()
 	SetDataFolder $kSetListDFPath
-	Wave/T	wCmds	= :commands
-	Wave/T	wResp	= :responses
 
-	String resp
-
-	Variable numCmds = numpnts(wCmds)
-	Print "Changing ", numCmds-2, "variables via TCP"
+	String/G resp
+	String sendCmd = SetListPackString(COMMAND)
 	
+	IF(ParamIsDefault(PORT))
+		PORT = SetListGetPortCmds(IP)
+	ENDIF
+
+	Print "Contact SetList at " + IP + ":" + num2str(PORT)
+
 	Variable sockNum = 0
 	Make /T/O bufferWave
 	SOCKITOpenConnection /Q/TIME=5 sockNum, IP, PORT, bufferwave
-	Variable i
-	FOR (i=0; i<numCmds; i = i+1 )
-		IF ( SOCKITisitopen(sockNum) )
-			SOCKITSendNRecv /TIME=30/NBYT=6 sockNum, wCmds[i], resp
-			wResp[i] = SetListPrintStr(resp)
-		ELSE
-			wResp[i] = "No Connection"
-		ENDIF
-	ENDFOR
-	
+	IF ( SOCKITisitopen(sockNum) )
+		SOCKITSendNRecv /TIME=5 sockNum, sendCmd, resp
+		resp = SetListPrintStr(resp)
+	ELSE
+		resp = "No Connection"
+	ENDIF
+	Print resp
 	SOCKITCloseConnection(sockNum)
 	
 	SetDataFolder sdfref
 END
 
-FUNCTION SetListBuildForNow([noSwap])
-	Variable	noSwap
-	DFREF	sdfref = GetDataFolderDFR()
-	SetDataFolder $kSetListDFPath
-	
-	// noSwap Defaults to False
-	IF (ParamIsDefault(noSwap))
-		noSwap = 0
-	ENDIF
-	
-	SetListVarCmds(noSwap=noSwap)
-	
-	Wave/T	wCmds	= :commands
-	Wave/T	wResp	= :responses
-	Redimension /N=(numpnts(wCmds)+1) wCmds
-	Redimension /N=(numpnts(wResp)+1) wResp
-	
-	wCmds[numpnts(wCmds)-1] = "EN"
-	
-	SetDataFolder sdfref
-END
-
-FUNCTION SetListBuildForSeq([noSwap])
-	Variable	noSwap
-	DFREF	sdfref = GetDataFolderDFR()
-	SetDataFolder $kSetListDFPath
-	
-	// noSwap Defaults to False
-	IF (ParamIsDefault(noSwap))
-		noSwap = 0
-	ENDIF
-	
-	SetListVarCmds(noSwap=noSwap)
-	
-	Wave/T	wCmds	= :commands
-	Wave/T	wResp	= :responses
-	Redimension /N=(numpnts(wCmds)+1) wCmds
-	Redimension /N=(numpnts(wResp)+1) wResp
-	
-	wCmds[numpnts(wCmds)-1] = "ES"
-	
-	SetDataFolder sdfref
-END
-
-FUNCTION SetListSendMulligan(IP, PORT, Mulligan)
+FUNCTION SetListGetPortCmds(IP)
 	String	IP
-	Variable	PORT, Mulligan
-	String	data = SetListI32String(Mulligan)
+	
+	return NumberByKey("Port", FetchURL("http://"+IP+":3580/SetList/JSON"), "=")
+END
 
-	Print "Sending Mulligan for", Mulligan, "via TCP"
-
+FUNCTION/S SetListBuildForNow([noSwap])
+	Variable	noSwap
 	DFREF	sdfref = GetDataFolderDFR()
-	SetDataFolder $kSetListDFPath	
-	Variable sockNum = 0
-	Make /T/O SLMbufferWave
-	SOCKITOpenConnection /Q/TIME=5 sockNum, IP, PORT, SLMbufferwave
-	SOCKITSendMSG /TIME=30 sockNum, data
-	SOCKITCloseConnection(sockNum)
+	SetDataFolder $kSetListDFPath
+	
+	// noSwap Defaults to False
+	IF (ParamIsDefault(noSwap))
+		noSwap = 0
+	ENDIF
+	
+	SetListVarCmds(noSwap=noSwap)
+	
+	Wave/T	wCmds	= :commands
+	Variable varCount = numpnts(wCmds)
+	
+	String cmdString = "\"instantVariables\":[" + wCmds[0]
+	
+	Variable i
+	FOR(i=1; i<varCount; i+=1)
+		cmdString = cmdString + "," + wCmds[i]
+	ENDFOR
+	cmdString = cmdString + "]"
 	
 	SetDataFolder sdfref
+	return cmdString
+END
+
+FUNCTION/S SetListBuildForSeq([noSwap])
+	Variable	noSwap
+	DFREF	sdfref = GetDataFolderDFR()
+	SetDataFolder $kSetListDFPath
+	
+	// noSwap Defaults to False
+	IF (ParamIsDefault(noSwap))
+		noSwap = 0
+	ENDIF
+	
+	SetListVarCmds(noSwap=noSwap)
+	
+	Wave/T	wCmds	= :commands
+	Variable varCount = numpnts(wCmds)
+	
+	String cmdString = "\"sequenceSets\":[[" + wCmds[0]
+	
+	Variable i
+	FOR(i=1; i<varCount; i+=1)
+		cmdString = cmdString + "," + wCmds[i]
+	ENDFOR
+	cmdString = cmdString + "]]"
+	
+	SetDataFolder sdfref
+	return cmdString
+END
+
+FUNCTION/S SetListBuildMulligan(Mulligan)
+	Variable Mulligan
+	String cmdString = "\"mulligan\":[" + num2str(Mulligan) + "]"
+	return cmdString
 END
