@@ -1,6 +1,6 @@
 # SetList
 
-LabVIEW control for BEC experiments.
+LabVIEW control for BEC experiments. SetList can be cited using [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3344809.svg)](https://doi.org/10.5281/zenodo.3344808).
 
 ## Getting started
 
